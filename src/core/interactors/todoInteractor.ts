@@ -1,9 +1,11 @@
 
 import Todo, { ITodo, ITodoRepository } from '../entities/Todo';
 
+// Interactor (Usecase)
 // Interactor handle Error by onSuccess or OnFailure passed by UIPresenter(React).
 // Interactor does'nt care what the datasource(ex API or LocalStorage) is.
-// Repository care which datasource uses, Thats Why inject Repository to Interactor in container.js
+// Repository care which datasource uses, Thats Why inject IRepository to Interactor in container.js
+// If We want to change Datasource, just create new concreat Repository and inject.
 
 interface CallBacks  {
   onSuccess(todos: ITodo[]):void
